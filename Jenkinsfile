@@ -7,9 +7,16 @@ pipeline{
     }
     
     stages{
-        stage('Git-checkout'){
-            steps{
-                git branch: 'dev' , url: 'https://github.com/manjukolkar/web-application.git'
+        stage('Checkout') {
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/nayanahg-16/web-application.git'
+                    ]],
+                    branches: [[name: '*/master']],
+                    gitTool: 'git' // 👈 Add this line to match the name set in Global Tool Config
+                ])
             }
         }
         stage('Code Compile'){
