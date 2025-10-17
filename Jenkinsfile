@@ -30,7 +30,7 @@ pipeline{
         stage('Containerisation'){
             steps{
                 sh '''
-                docker run -it -d --name c8 -p 9008:8080 nayanahg/project2
+                docker run -it -d --name c9 -p 9008:8080 nayanahg/project2
                 '''
             }
         }
@@ -45,7 +45,7 @@ pipeline{
         }
          stage('Pushing image to repository'){
             steps{
-                sh 'docker push nayanahg/project1'
+                sh 'docker push nayanahg/project2'
             }
         }
         
