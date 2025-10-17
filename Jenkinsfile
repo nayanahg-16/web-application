@@ -24,13 +24,13 @@ pipeline{
         }
         stage('Build and tag'){
             steps{
-                sh 'docker build -t nayanahg/project1 .'
+                sh 'docker build -t nayanahg/project2 .'
             }
         }
         stage('Containerisation'){
             steps{
                 sh '''
-                docker run -it -d --name c8 -p 9008:8080 nayanahg/project1
+                docker run -it -d --name c8 -p 9008:8080 nayanahg/project2
                 '''
             }
         }
