@@ -1,29 +1,29 @@
-pipeline{
+pipeline {
     agent any
-    
-    stages{
-        stage('hostname'){
-            steps{
+
+    stages {
+        stage('hostname') {
+            steps {
                 sh 'hostname'
             }
-        
-        stage('hostname-I'){
-            steps{
+        }
+
+        stage('hostname-I') {
+            steps {
                 sh 'hostname -I'
             }
         }
 
-        stage('CPU'){
-            steps{
+        stage('CPU') {
+            steps {
                 sh 'lscpu'
             }
         }
 
-        stage('disk'){
-            steps{
+        stage('disk') {
+            steps {
                 sh 'du -sh'
             }
-        }
         }
     }
 }
